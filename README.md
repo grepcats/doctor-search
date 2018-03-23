@@ -22,6 +22,14 @@
   * Input: Query string that results in no doctors
   * Output: "There are no doctors matching your search. Please change your criteria and try again."
 
+* Program should allow users to search by location
+  * Input: "portland, or" or other locations
+  * Output: input term is geocoded and search results are limited by location with 100 mile radius
+
+* Program should provide a dropdown of specialties that they can use to refine search
+  * Input: ""
+  * Output:
+
 ---
 Other features
 * Allow users to search by location (instead of just hardcoding a value for Portland). This will involve making two API calls: one to geocode the latitude and longitude of a location and then a second call to the BetterDoctor API. https://developers.google.com/maps/documentation/geocoding/start

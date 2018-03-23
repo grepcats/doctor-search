@@ -1,4 +1,4 @@
-import { mainSearch } from './doctor.js';
+import { mainSearch } from './search.js';
 import { displayDoctors, displayError } from './ui.js';
 import './styles.css';
 
