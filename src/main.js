@@ -4,15 +4,23 @@ import './styles.css';
 
 
 $(document).ready(function() {
+
   $("#malady-search").submit(function(event) {
     event.preventDefault();
-
     let newSearch = new mainSearch();
-    let searchPromise = newSearch.docCall($("#malady-term").val(), $("#first-name").val(), $("#last-name").val());
-    searchPromise.then(function(response) {
-      displayDoctors(response);
-    }, function(error) {
-      displayError(error);
+    let locationPromise = newSearch.geocodeCall($("#search-location").val());
+    locationPromise.then(function(response) {
+      let body = JSON.parse(response);
+      let geocodedLoc = [body.results[0].geometry.location.lat, body.results[0].geometry.location.lng];
+
+      return newSearch.docCall($("#malady-term").val(), $("#first-name").val(), $("#last-name").val(), geocodedLoc);
+    }, function(firstError) {
+      displayError(firstError);
+    })
+    .then(function(response) {
+      displayDoctors(response)
+    }, function(secondError) {
+      displayError(secondError);
     });
   });
 

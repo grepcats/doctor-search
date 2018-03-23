@@ -20,7 +20,7 @@
 
 * Program should gracefully handle situations where there are no results
   * Input: Query string that results in no doctors
-  * Output: "There are no doctors matching your search. Please change your criteria and try again.""
+  * Output: "There are no doctors matching your search. Please change your criteria and try again."
 
 ---
 Other features
