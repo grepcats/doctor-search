@@ -10,7 +10,7 @@ export class Display {
     if (body.data.length > 0) {
       body.data.forEach(function(element) {
         let newDoc = new Doctor(element.profile.first_name, element.profile.last_name);
-
+        console.log(element);
         $(".output").append("<div class='well doctor'>")
         $(".output .doctor:last-child").append("<div class='info'>")
         $(".output .doctor:last-child .info").append("<p>" + element.profile.first_name + " " + element.profile.last_name + "</p>");
@@ -22,7 +22,11 @@ export class Display {
           newDoc.state = element.practices[0].visit_address.state;
           newDoc.zip = element.practices[0].visit_address.zip;
           newDoc.phone = element.practices[0].phones[0].number;
+          newDoc.website = element.practices[0].website;
             $(".output .doctor:last-child .info").append("<p>Accepting new patients at " + element.practices[0].name + "</p><p class='address'>" + element.practices[0].visit_address.street + "</p><p class='address'>" + element.practices[0].visit_address.city + " " + element.practices[0].visit_address.state + " " + element.practices[0].visit_address.zip + "</p><p class='address'>" + element.practices[0].phones[0].number + "</p>");
+            if (newDoc.website != undefined) {
+              $(".output .doctor:last-child .info").append("<p>" + newDoc.website + "</p>")
+            }
           }
         if (element.specialties.length > 0) {
           $(".output .doctor:last-child .info").append("<p>Specialties: </p>")
