@@ -1,18 +1,30 @@
 import { mainSearch } from './search.js';
-import { displayDoctors, displayError, displaySpecialties } from './ui.js';
+import { displayDoctors, displayError, displaySpecialties, displayRecentDocs } from './ui.js';
 import './styles.css';
 
 
 $(document).ready(function() {
-
+  let allDocsSoFar = [];
   let newSearch = new mainSearch();
   let specialtyPromise = newSearch.specialtiesCall();
   specialtyPromise.then(function(response) {
     displaySpecialties(response);
   });
 
+  $("#display-recent").click(function(event) {
+    event.preventDefault();
+    displayRecentDocs(allDocsSoFar);
+  })
+
+  $("#delete-recent").click(function(event) {
+    event.preventDefault();
+    allDocsSoFar = [];
+    $(".output div").remove();
+  })
+
   $("#malady-search").submit(function(event) {
     event.preventDefault();
+
 
     let locationPromise = newSearch.geocodeCall($("#search-location").val());
     locationPromise.then(function(response) {
@@ -24,7 +36,9 @@ $(document).ready(function() {
       displayError(firstError);
     })
     .then(function(response) {
-      displayDoctors(response)
+      allDocsSoFar.push(displayDoctors(response));
+      console.log(allDocsSoFar);
+
     }, function(secondError) {
       displayError(secondError);
     });

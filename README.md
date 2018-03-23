@@ -27,13 +27,20 @@
   * Output: input term is geocoded and search results are limited by location with 100 mile radius
 
 * Program should provide a dropdown of specialties that they can use to refine search
-  * Input: ""
-  * Output:
+  * Input: "Acupuncture"
+  * Output: Doctors whose specialties include acupuncture
+
+* Program should create a list of recently viewed doctors and offer to display it to user
+  * Input: click button to display list of doctors
+  * Output: List of doctors that have appeared in search results
+
+* Program should allow user to clear list of recently viewed doctors
+  * Input: click "clear recently viewed doctors"
+  * Output: list is now empty.
 
 ---
 Other features
-* Allow users to search by location (instead of just hardcoding a value for Portland). This will involve making two API calls: one to geocode the latitude and longitude of a location and then a second call to the BetterDoctor API. https://developers.google.com/maps/documentation/geocoding/start
-* Add an additional API call to retrieve the list of specialities from the database before you query for a doctor, then return that list in a dropdown menu.
+
 * Create a list of "recently viewed" doctors and display it.
 * Create a list of "related doctors" and display it. You can define related however you wish.
 * Add static pages, links to your GitHub, social media, and more.
