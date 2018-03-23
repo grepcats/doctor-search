@@ -1,5 +1,6 @@
 export function displayDoctors(response) {
   let body = JSON.parse(response);
+  $(".output .doctor").remove();
   body.data.forEach(function(element) {
     $(".output").append("<div class='well doctor'>")
     $(".output .doctor:last-child").append("<p>" + element.profile.first_name + " " + element.profile.last_name + "</p>");
