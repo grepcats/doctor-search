@@ -31,5 +31,16 @@ export function displayError(errorText) {
   $(".output").append("<p>" + errorText+ "</p>")
 }
 
+export function displaySpecialties(response) {
+  let body = JSON.parse(response);
+//  console.log(body);
+  let specialtyArray = [];
+  body.data.forEach(function(specialty) {
+    specialtyArray[specialty.uid] = specialty.name;
+  })
+  specialtyArray.sort();
+  for(var index in specialtyArray) {
+    $("#specialty").append("<option value=" + index + ">" + specialtyArray[index] + "</option>")
+  }
 
-  //console.log(body.data[1]);
+}
