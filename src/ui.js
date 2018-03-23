@@ -31,5 +31,24 @@ export function displayError(errorText) {
   $(".output").append("<p>" + errorText+ "</p>")
 }
 
+export function displaySpecialties(response) {
+  let body = JSON.parse(response);
+//  console.log(body);
+  let specialtyArray = [];
+  body.data.forEach(function(specialty) {
+    specialtyArray.push({ uid: specialty.uid, specialty: specialty.name});
+    })
+  specialtyArray.sort(compare);
+  specialtyArray.forEach(function(item) {
+    $("#specialty").append("<option value=" + item.uid + ">" + item.specialty + "</option>")
+  })
 
-  //console.log(body.data[1]);
+}
+
+function compare(a,b) {
+  if (a.uid < b.uid)
+    return -1;
+  if (a.uid > b.uid)
+    return 1;
+  return 0;
+}
