@@ -1,5 +1,6 @@
 import { mainSearch } from './doctor.js';
 import { displayDoctors } from './ui.js';
+import './styles.css';
 
 
 $(document).ready(function() {
@@ -7,11 +8,11 @@ $(document).ready(function() {
     event.preventDefault();
 
     let newSearch = new mainSearch();
-    let searchPromise = newSearch.docCall();
+    let searchPromise = newSearch.docCall($("#malady-term").val());
     searchPromise.then(function(response) {
       displayDoctors(response);
     }, function(error) {
-      console.log("you suck");
+      console.log("there was an error");
     });
   });
 
