@@ -12,41 +12,51 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
-      <h1>Doctor Search</h1>
-      <div class="search">
-        <form id="malady-search">
-          <h3>Search by location</h3>
-          <div class="form-group">
-            <label for="search-location">Location</label>
-            <input type="text" id="search-location" class="form-control">
-          </div>
-          <h3>Search by malady or need</h3>
-          <div class="form-group">
-            <label for="malady-term">Term</label>
-            <input type="text" id="malady-term" class="form-control">
-          </div>
-          <h3>Search by name</h3>
-          <div class="form-group">
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" class="form-control">
-          </div>
-          <h3>Search by specialty</h3>
-          <div class="form-group">
-            <select id="specialty" class="form-control">
-              <option value=""></option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-default">Click for doctors</button>
-        </form>
+      <div class="jumbotron">
+        <h1>Doctor Search</h1>
+        <p>Enter your search terms to find doctors in your area</p>
       </div>
-      <button id="display-recent">Display recent docs</button>
-      <button id="delete-recent">Clear recent docs</button>
+      <div class="row">
+        <div class="search col-sm-7">
+          <h2>Search</h2>
+          <form id="malady-search">
+            <h3>Search by location</h3>
+            <div class="form-group">
+              <label for="search-location">Location</label>
+              <input type="text" id="search-location" class="form-control">
+            </div>
+            <h3>Search by malady or need</h3>
+            <div class="form-group">
+              <label for="malady-term">Term</label>
+              <input type="text" id="malady-term" class="form-control">
+            </div>
+            <h3>Search by name</h3>
+            <div class="form-group">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" class="form-control">
+            </div>
+            <h3>Search by specialty</h3>
+            <div class="form-group">
+              <select id="specialty" class="form-control">
+                <option value=""></option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">Click for doctors</button>
+          </form>
+        </div>
+        <div class="options well col-sm-5">
+          <h2>Other Search Options</h2>
+          <button id="display-recent" class="btn btn-primary">Display recent docs</button>
+          <button id="delete-recent" class="btn btn-danger">Clear recent docs</button>
+        </div>
+      </div>
       <div class="output">
       </div>
+
     </div>
 
   </body>

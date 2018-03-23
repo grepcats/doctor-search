@@ -44,12 +44,13 @@ export class Display {
   }
 
   displayError(errorText) {
+    $(".output div").remove();
+    $(".output p").remove();
     $(".output").append("<p>" + errorText+ "</p>")
   }
 
   displaySpecialties(response) {
     let body = JSON.parse(response);
-  //  console.log(body);
     let specialtyArray = [];
     body.data.forEach(function(specialty) {
       specialtyArray.push({ uid: specialty.uid, specialty: specialty.name});
@@ -69,7 +70,6 @@ export class Display {
     }
     arrayOfDocs.forEach(function(results) {
       results.forEach(function(doc) {
-        console.log(doc);
         $(".output").append("<div class='well doctor'>")
         $(".output .doctor:last-child").append("<div class='info'>")
         $(".output .doctor:last-child .info").append("<p>" + doc.firstName + " " + doc.lastName + "</p>");

@@ -38,7 +38,6 @@ $(document).ready(function() {
     })
     .then(function(response) {
       allDocsSoFar.push(newDisplay.displayDoctors(response));
-      console.log(allDocsSoFar);
 
     }, function(secondError) {
       newDisplay.displayError(secondError);
