@@ -1,3 +1,18 @@
 .address {
   margin:0;
 }
+
+.doctor {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.doctor-img {
+  width: 30%;
+}
+
+.actual-doctor-img {
+  width: 100%;
+  max-width: 200px;
+}
