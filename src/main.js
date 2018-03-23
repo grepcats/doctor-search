@@ -8,7 +8,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     let newSearch = new mainSearch();
-    let searchPromise = newSearch.docCall($("#malady-term").val());
+    let searchPromise = newSearch.docCall($("#malady-term").val(), $("#first-name").val(), $("#last-name").val());
     searchPromise.then(function(response) {
       displayDoctors(response);
     }, function(error) {

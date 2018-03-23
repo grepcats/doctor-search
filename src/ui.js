@@ -24,5 +24,5 @@ export function displayDoctors(response) {
   //  $(".output").append("<p>" + element.practices[0].accepts_new_patients + "</p>");
   });
 
-  console.log(body.data[1]);
+  //console.log(body.data[1]);
 }
