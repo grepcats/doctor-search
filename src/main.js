@@ -1,5 +1,5 @@
 import { mainSearch } from './doctor.js';
-import { displayDoctors } from './ui.js';
+import { displayDoctors, displayError } from './ui.js';
 import './styles.css';
 
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
     searchPromise.then(function(response) {
       displayDoctors(response);
     }, function(error) {
-      console.log("there was an error");
+      displayError(error);
     });
   });
 

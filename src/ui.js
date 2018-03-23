@@ -25,8 +25,11 @@ export function displayDoctors(response) {
   } else {
     $(".output").append("<div class='error'>There are no doctors matching your search. Please change your criteria and try again.</div>");
   }
+}
 
+export function displayError(errorText) {
+  $(".output").append("<p>" + errorText+ "</p>")
+}
 
 
   //console.log(body.data[1]);
-}
