@@ -1,5 +1,6 @@
-//include instructions on setting up .env file
-//don't include jasmine/karma init
+# Doctor Search
+
+#### _A web app that allows users to search for area doctors. Users can search by doctor name, keyword/symptom, and specialty. 3/23/2018_
 
 ##Specs
 * Program should return a list of doctors in the Portland area
@@ -38,10 +39,50 @@
   * Input: click "clear recently viewed doctors"
   * Output: list is now empty.
 
----
-Other features
+* Program will allow user to select the number of results they'd like to see
+  * Input: enter number
+  * Output: the number of results should reflect number user enters.
 
-* Create a list of "recently viewed" doctors and display it.
-* Create a list of "related doctors" and display it. You can define related however you wish.
-* Add static pages, links to your GitHub, social media, and more.
-* Use Google Maps API to plot the locations of doctors's practices on a map.
+
+## Setup and Installation
+* clone repository: git clone https://github.com/grepcats/galactic-age-calc
+* install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
+* in the project directory, type
+```
+npm init
+npm install (this installs the packages and dependencies listed in the package.json file)
+npm install -g karma-cli (you should only have to do this once on your machine)
+
+```
+* You will need to obtain a Google Maps Geocoding API key. You may do so here: https://developers.google.com/maps/documentation/geocoding/start#get-a-key
+* You will need to obtain a BetterDoctor API key. You may do so here: https://developer.betterdoctor.com/
+* Once you have these keys, create a .env file in your project root directory. Enter the following lines in your file:
+```
+exports.apiKey=[Your BetterDoctor API key]
+exports.google_apiKey=[Your Google API Key]
+
+```
+* to test, run `npm test`. Please note there are no tests at this time.
+* to open the development server, run `npm start`
+
+From here, you should be able to enter your information and see results.
+
+## Known Bugs
+No known bugs.
+
+## Support and Contact Details
+If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
+
+## Technologies Used
+JavaScript, Node.js, npm, Bootstrap, jQuery
+
+## License
+MIT License
+
+Copyright (c) 2018 Kayla Ondracek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

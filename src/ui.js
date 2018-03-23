@@ -10,7 +10,6 @@ export class Display {
     if (body.data.length > 0) {
       body.data.forEach(function(element) {
         let newDoc = new Doctor(element.profile.first_name, element.profile.last_name);
-        console.log(element);
         $(".output").append("<div class='well doctor'>")
         $(".output .doctor:last-child").append("<div class='info'>")
         $(".output .doctor:last-child .info").append("<p>" + element.profile.first_name + " " + element.profile.last_name + "</p>");
@@ -25,11 +24,11 @@ export class Display {
           newDoc.website = element.practices[0].website;
             $(".output .doctor:last-child .info").append("<p>Accepting new patients at " + element.practices[0].name + "</p><p class='address'>" + element.practices[0].visit_address.street + "</p><p class='address'>" + element.practices[0].visit_address.city + " " + element.practices[0].visit_address.state + " " + element.practices[0].visit_address.zip + "</p><p class='address'>" + element.practices[0].phones[0].number + "</p>");
             if (newDoc.website != undefined) {
-              $(".output .doctor:last-child .info").append("<p>" + newDoc.website + "</p>")
+              $(".output .doctor:last-child .info").append("<p class='address'>" + newDoc.website + "</p>")
             }
           }
         if (element.specialties.length > 0) {
-          $(".output .doctor:last-child .info").append("<p>Specialties: </p>")
+          $(".output .doctor:last-child .info").append("<p class='special-p'>Specialties: </p>")
           $(".output .doctor:last-child .info").append("<ul>")
           element.specialties.forEach(function(specialty) {
             newDoc.specialties.push(specialty.actor);
@@ -79,9 +78,12 @@ export class Display {
         $(".output .doctor:last-child .info").append("<p>" + doc.firstName + " " + doc.lastName + "</p>");
         if (doc.accepting === true) {
             $(".output .doctor:last-child .info").append("<p>Accepting new patients at " + doc.practice + "</p><p class='address'>" + doc.streetAddress + "</p><p class='address'>" + doc.city + " " + doc.state + " " + doc.zip + "</p><p class='address'>" + doc.phone + "</p>");
+            if (doc.website != undefined) {
+              $(".output .doctor:last-child .info").append("<p class='address'>" + doc.website + "</p>")
+            }
           }
         if (doc.specialties.length > 0) {
-          $(".output .doctor:last-child .info").append("<p>Specialties: </p>")
+          $(".output .doctor:last-child .info").append("<p class='special-p'>Specialties: </p>")
           $(".output .doctor:last-child .info").append("<ul>")
           doc.specialties.forEach(function(specialty) {
             $(".output .doctor:last-child .info ul").append("<li>" + specialty + "</li>")

@@ -52,7 +52,7 @@ export class mainSearch {
       }
       let searchTerm = encodeURIComponent(term);
 
-      let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchTerm}&key=${process.env.google_apiKey}`;
+      let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchTerm}&key=${process.env.exports.google_apiKey}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
