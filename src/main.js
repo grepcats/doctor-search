@@ -30,14 +30,12 @@ $(document).ready(function() {
     locationPromise.then(function(response) {
       let body = JSON.parse(response);
       let geocodedLoc = [body.results[0].geometry.location.lat, body.results[0].geometry.location.lng];
-
       return newSearch.docCall($("#malady-term").val(), $("#first-name").val(), $("#last-name").val(), geocodedLoc, $("#specialty").val(), $("#results-num").val());
     }, function(firstError) {
       newDisplay.displayError(firstError);
     })
     .then(function(response) {
       allDocsSoFar.push(newDisplay.displayDoctors(response));
-
     }, function(secondError) {
       newDisplay.displayError(secondError);
     });
