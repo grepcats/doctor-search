@@ -36,11 +36,19 @@ export function displaySpecialties(response) {
 //  console.log(body);
   let specialtyArray = [];
   body.data.forEach(function(specialty) {
-    specialtyArray[specialty.uid] = specialty.name;
+    specialtyArray.push({ uid: specialty.uid, specialty: specialty.name});
+    })
+  specialtyArray.sort(compare);
+  specialtyArray.forEach(function(item) {
+    $("#specialty").append("<option value=" + item.uid + ">" + item.specialty + "</option>")
   })
-  specialtyArray.sort();
-  for(var index in specialtyArray) {
-    $("#specialty").append("<option value=" + index + ">" + specialtyArray[index] + "</option>")
-  }
 
+}
+
+function compare(a,b) {
+  if (a.uid < b.uid)
+    return -1;
+  if (a.uid > b.uid)
+    return 1;
+  return 0;
 }
