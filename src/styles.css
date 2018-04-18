@@ -60,3 +60,16 @@ h2 {
 .btn-default {
   margin-left: 20px;
 }
+
+@media (max-width: 720px) {
+  .doctor {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .actual-doctor-img {
+    display: none;
+  }
+}
