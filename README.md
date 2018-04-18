@@ -49,7 +49,7 @@ The live site is deployed to Firebase here: https://doctor-search-21f6a.firebase
 
 If you would like to interact with the code directly, please follow these instructions:
 
-* clone repository: git clone https://github.com/grepcats/galactic-age-calc
+* clone repository: git clone https://github.com/grepcats/doctor-search
 * install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
 * in the project directory, type
 ```
