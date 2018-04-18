@@ -2,7 +2,7 @@
 
 #### _A web app that allows users to search for area doctors. Users can search by doctor name, keyword/symptom, and specialty. 3/23/2018_
 
-##Specs
+## Specs
 * Program should return a list of doctors in the Portland area
   * Input: Click "search"
   * Output: List of doctors and their specialties, contact info
@@ -45,6 +45,10 @@
 
 
 ## Setup and Installation
+The live site is deployed to Firebase here: https://doctor-search-21f6a.firebaseapp.com/
+
+If you would like to interact with the code directly, please follow these instructions:
+
 * clone repository: git clone https://github.com/grepcats/galactic-age-calc
 * install node. if you are on a mac, use `brew install node`. Otherwise, go to https://nodejs.org/en/download/ and download/install the appropriate installer.
 * in the project directory, type
