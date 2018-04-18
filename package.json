@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode development",
     "start": "npm run build && webpack-dev-server --open --mode development",
+    "deploy": "npm run build && firebase deploy",
     "lint": "eslint src/*.js",
     "test": "karma start karma.conf.js"
   },
