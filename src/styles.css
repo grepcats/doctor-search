@@ -1,3 +1,14 @@
+.jumbotron {
+  text-align: center;
+  background-color: #7A3B69;
+  color: #CFCFCD;
+}
+
+.container {
+  background-color: #9A879D;
+  color: #CFCFCD;
+}
+
 .address {
   margin:0;
 }
